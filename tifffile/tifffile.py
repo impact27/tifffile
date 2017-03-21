@@ -839,7 +839,7 @@ class TiffWriter(object):
                     assert value.size == count
                     assert value.dtype.char == dtype
                     ifdvalue = value.tostring()
-                elif isinstance(value, (tuple, list)):
+                elif isinstance(value, (tuple, list, bytes)):
                     ifdvalue = pack(str(count)+dtype, *value)
                 else:
                     ifdvalue = pack(dtype, value)
